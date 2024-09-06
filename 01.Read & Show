@@ -1,0 +1,3 @@
+import cv2
+img=cv2.imread('C:/Users/thula/OneDrive/Pictures/Saved Pictures/tree.jpeg')
+cv2.imshow('image',img)
