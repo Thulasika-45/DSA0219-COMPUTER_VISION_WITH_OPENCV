@@ -1,0 +1,4 @@
+from PIL import Image,ImageFilter
+image=Image.open(r'C:/Users/thula/OneDrive/Pictures/Saved Pictures/tree.jpeg')
+image=image.filter(ImageFilter.GaussianBlur)
+image.show()
