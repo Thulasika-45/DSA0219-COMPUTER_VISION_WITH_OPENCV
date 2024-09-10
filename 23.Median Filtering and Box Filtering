@@ -1,0 +1,12 @@
+import numpy as np
+def median_filtering(data):
+    filtered_data = np.median(data)
+    return filtered_data
+def box_filtering(data, kernel_size):
+    filtered_data = np.convolve(data, np.ones(kernel_size) / kernel_size, mode='valid')
+    return filtered_data
+data = np.array([3, 5, 8, 12, 7, 10, 15, 20, 18, 22, 25, 28, 30])
+median_result = median_filtering(data)
+box_result = box_filtering(data, kernel_size=3)
+print("Median Filtering:", median_result)
+print("Box Filtering:", box_result)
