@@ -1,0 +1,11 @@
+import cv2
+import numpy as np
+from matplotlib import pyplot as plt
+left_img = cv2.imread("D:/cv/text.png", 0)
+right_img = cv2.imread("D:/cv/tree.jpeg", 0)
+stereo = cv2.StereoBM_create(numDisparities=16, blockSize=15)
+disparity = stereo.compute(left_img, right_img)
+disparity_normalized = cv2.normalize(disparity, None, 0, 255, cv2.NORM_MINMAX)
+plt.imshow(disparity_normalized, cmap='gray')
+plt.title('Disparity Map (Depth Estimation)')
+plt.show()
